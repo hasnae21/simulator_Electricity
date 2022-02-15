@@ -16,10 +16,10 @@
 
     <form action="code.php" method="post" name="données">
         <label for="Index1">Entrer L'index du mois dérnier: </label>
-        <input type="number" name="Index1" id="Index1" >
+        <input type="number" name="In1" id="Index1" >
         <br>
         <label for="Index2">Entrer L'index du ce mois:</label>
-        <input type="number" name="Index2" id="Index2" >
+        <input type="number" name="In2" id="Index2" >
         <br>
         <label for="1">Entrer le Calibre: 5-10</label>
         <input type="radio" name="v" id="1">
@@ -30,18 +30,17 @@
         <br>
         <input type="submit" name="valider" value="Calculer">
     </form>
-    <!-- colspan=3 -->
+
     <?php
     if (isset($_POST['valider'])) {
-        $Index1 = $_POST['Index1'];
-        $Index2 = $_POST['Index2'];
+        $Index1 = $_POST['In1'];
+        $Index2 = $_POST['In2'];
         $calibre = $_POST['v'];
     }
     include("functions.php");
-    $consommation = Substraction($Index1, $Index2);
-
+    include("Tranche.php");
     ?>
-    
+
     <section>
     <div class="inputs">
         <div class="box">
@@ -56,6 +55,7 @@
         </div>
         <div class="box">
             <?php
+            $consommation = Substraction($In1, $In2);
             echo 'Consommation:       ' . $consommation . ' kWh';
             ?>
         </div>
@@ -82,31 +82,26 @@
             </tr>
             <tr>
                 <th>
-                    <?php echo  $consommation; ?>
+                    <?php Tranches($consommation);?>
                 </th>
                 <td>
                     <?php echo  $consommation; ?>
                 </td>
                 <td>
-                    <?php
-                    echo $consommation;
-                    ?>
+                    <?php echo $consommation;?>
                 </td>
                 <td>
-                    <?php
-                    echo  $consommation;
-                    ?>
+                    <?php echo  $consommation;?>
                 </td>
                 <td>14%</td>
                 <td>
-                    <?php
-                    echo  $consommation;
-                    ?>
+                    <?php echo  $consommation;?>
                 </td>
                 <th>
-                    <?php echo  $consommation; ?>
+                    <?php اشطر($consommation); ?>
                 </th>
             </tr>
+
             <tr>
                 <th>
                     <?php echo  $consommation; ?>
@@ -128,6 +123,7 @@
                     <?php echo  $consommation; ?>
                 </th>
             </tr>
+
             <tr>
                 <th>REDEVANCE FIXE ELECTRICITE</th>
                 <td colspan=2></td>
