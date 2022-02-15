@@ -10,71 +10,148 @@
 </head>
 <body align="center">
 
-    <h1>Welcome to SOLIDAO</h1>
-    <h2>Simuler votre consommation d'électricité mensuelle</h2>
-    <form action="code.php" method="post" name="données">
+<h1>Welcome to SOLIDAO</h1>
+<h2>Simuler votre consommation d'électricité mensuelle</h2>
+
+<form action="code.php" method="post" name="données">
         <p>Entrer L'index de consommation du mois dérnier: </p>
         <input type="number" name="Index1">
         <br>
-        <p>Entrer L'index de consommation du ce mois: </p>
+        <p>Entrer L'index de consommation du ce mois:</p>
         <input type="number" name="Index2">
         <br><br>
         <button name="valider">Facture provisoire</button>
-    </form>
+</form>
 
-    <table class="table caption-top">
+<?php
+        if (isset($_POST['valider'])) {
+            $Index1 = $_POST['Index1'];
+            $Index2 = $_POST['Index2'];
+        }
+        include("functions.php");
+        $consommation = Substraction($Index1, $Index2);
+?>
+
+<div class="inputs">
+    <div class="box">
+            <?php 
+            echo "Ancien index:     " . $Index1;
+            ?>
+    </div>
+    <div class="box">
+            <?php 
+            echo 'Nouvel index::      ' . $Index2 ;
+            ?>
+    </div>
+    <div class="box">
+            <?php 
+            echo 'Consommation:       ' . $consommation . ' kWh (Kilowattheure)';
+            ?>
+    </div>
+</div>
+    
+<table border>
         <caption>Votre facture provisoire:</caption>
         <thead>
             <tr>
                 <th scope="col"></th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
+                <th scope="col">i</th>
+                <th scope="col">i</th>
+                <th scope="col">i</th>
+                <th scope="col">i</th>
+                <th scope="col">i</th>
+                <th scope="col"></th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
+                <th >1</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <th >1</th>
             </tr>
             <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
+                <th >2</th>
+                <td>           
+                        <?php echo  $consommation ; ?>
+                </td>
+                <td></td>
+                <td></td>
+                <td>14%</td>
+                <td></td>
+                <th >2</th>
             </tr>
+
             <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
+                <th>3</th>
+                <td>?</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <th>3</th>
             </tr>
+
+            <tr>
+            <th >4</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>14%</td>
+                <td></td>
+            <th >4</th>
+            </tr>
+
+            <tr>
+            <th>5</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            <th >5</th>
+            </tr>
+
+            <tr>
+            <th>6</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            <th >6</th>
+            </tr>
+
+            <tr>
+            <th>7</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>0.45</td>
+            <th >7</th>
+            </tr>
+
+            <tr>
+            <th >8</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            <th >8</th>
+            </tr>
+
         </tbody>
     </table>
-<?php
-    include("index.php");
-    if (isset($_POST['valider'])) {
-        $Index1 = $_POST['Index1'];
-        $Index2 = $_POST['Index2'];
-    }
-    echo 'L\'index de ce mois est:  ' . $Index2 . '<br>';
-    $consommation = Substraction($Index1, $Index2);
-    echo 'Votre consommation mensuelle est de:   ' . $consommation . ' kWh (Kilowattheure)';
-    ?>
-<div class="donner">
-    <div class="index1">
-        <?php 
-        echo "L'index du mois dérnier était:  " . $Index1 . '<br>';
-        ?>
-    </div>
-    <div class="index2">
 
-    </div>
-    <div class="consommation">
-
-    </div>
+<div class="outputs">
+    <div></div>
+    <div></div>
+    <div></div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

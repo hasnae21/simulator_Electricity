@@ -1,3 +1,17 @@
 table{
     margin: 20px auto;
 }
+.inputs .outputs{
+display: flex;
+justify-content: space-around;
+align-items: center;
+background-color: grey;
+color: black;
+}
+.box{
+    border: solid 2px black;
+}
+td{
+    background-color: black;
+    color: white;
+}
