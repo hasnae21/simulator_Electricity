@@ -141,7 +141,7 @@
                 <th>
                     <?php if ($consommation > 100 && $consommation <= 150) {
                         echo  "1الشطر";
-                    } else اشطر($consommation);
+                    } else echo اشطر($consommation);
                     ?>
                 </th>
             </tr>
