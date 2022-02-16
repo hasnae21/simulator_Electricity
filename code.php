@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="style.css">
     <title>SOLIDAO</title>
 </head>
-
 <body>
     <div id="imprimer_zone">
     <h2>Welcome to SOLIDAO</h2>
@@ -30,7 +29,7 @@
                 <div class="input-group-text">
                     <input type="radio" name="v" id="1" value="5-10" class="form-check-input mt-0">
                 </div>
-                <label for="1" class="form-check-label"> 5-10</label>
+                <label for="1" class="form-check-label" > 5-10</label>
             </div>
             <br>
             <div class="input-group col">
@@ -60,7 +59,7 @@
     }
     include("Math.php");
     include("Functions.php");
-    $consommation = Substraction($Index1, $Index2);
+     $consommation = Substraction($Index1, $Index2);
     ?>
 
     <div class="inputs">

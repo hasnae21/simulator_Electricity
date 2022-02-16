@@ -15,7 +15,7 @@
     margin-top: 20px;
 }
 .boxs{
-    border: solid 1px #ced4da;;
+    border: solid 1px #ced4da;
     width: 350px;
     height: 40PX;
     text-align: left;
@@ -32,7 +32,6 @@ label{
     Padding-left: 20px;
 }
 table{
-    /* padding: 20px 0px; */
     margin-top: 20px ; 
 }
 caption{
