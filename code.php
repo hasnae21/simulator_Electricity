@@ -9,34 +9,17 @@
     <link rel="stylesheet" href="style.css">
     <title>SOLIDAO</title>
 </head>
+    
 <body>
     <div id="imprimer_zone">
         <h2>Welcome to SOLIDAO</h2>
         <h4>Simuler votre consommation d'électricité mensuelle</h4>
-<<<<<<< HEAD
 
         <form action="code.php" method="post">
 
             <div class=" input-group mb-3 ">
                 <span class="input-group-text" id="basic-addon1">Entrer L'index du mois dérnier: </span>
                 <input type="number" name="Index1" id="Index1" class="form-control">
-=======
-        <div class="input-group mb-3 ">
-            <span class="input-group-text" id="basic-addon1">Entrer L'index du mois dérnier: </span>
-            <input type="number" name="Index1" id="Index1" class="form-control">
-        </div>
-        <div class="input-group mb-3 ">
-            <span class="input-group-text" id="basic-addon1">Entrer L'index du ce mois: </span>
-            <input type="number" name="Index2" id="Index2" class="form-control">
-        </div>
-        <div class="input-group mb-3 row">
-            <label class="col">Entrer le calibre:</label>
-            <div class="input-group col">
-                <div class="input-group-text">
-                    <input type="radio" name="v" id="1" value="5-10" class="form-check-input mt-0">
-                </div>
-                <label for="1" class="form-check-label" > 5-10</label>
->>>>>>> afa34c23e64bec5dcd0ba0b0e81b37a9bf53773b
             </div>
 
             <div class="input-group mb-3">
@@ -71,21 +54,10 @@
 
             <input type="submit" name="valider" class="btn-check mb-3" id="btn-check-outlined">
             <label class="btn btn-outline-primary" for="btn-check-outlined">Calculer</label>
+        
         </form>
 
-<<<<<<< HEAD
-        <!-- recuperer les valeurs du formulaire avec php-->
-        <?php
-        if (isset($_POST['valider'])) {
-            $Index1 = $_POST['Index1'];
-            $Index2 = $_POST['Index2'];
-            $calibre = $_POST['v'];
-        }
-        include("Math.php");
-        include("Functions.php");
-        $consommation = Substraction($Index1, $Index2);
-        ?>
-=======
+    <!-- recuperer les valeurs du formulaire avec php-->
     <?php
     if (isset($_POST['valider'])) {
         $Index1 = $_POST['Index1'];
@@ -94,11 +66,12 @@
     }
     include("Math.php");
     include("Functions.php");
-     $consommation = Substraction($Index1, $Index2);
+                
+    $consommation = Substraction($Index1, $Index2);
     ?>
->>>>>>> afa34c23e64bec5dcd0ba0b0e81b37a9bf53773b
 
-        <div class="inputs">
+                
+    <div class="inputs">
             <div class="boxs">
                 <?php echo "Ancien index: " . $Index1; ?>
             </div>
@@ -108,8 +81,8 @@
             <div class="boxs">
                 <?php echo 'Consommation: ' . $consommation . ' kWh';  ?>
             </div>
-        </div>
-
+     </div>
+                
     </div>
 
     <!-- facture sous forme d'un tableau-->
