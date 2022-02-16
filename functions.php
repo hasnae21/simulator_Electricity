@@ -33,19 +33,17 @@ function اشطر(int $a)
 
 function TarifKWT(int $a)
 {
-    if ($a <= 150) {
-        if ($a <= 100)
+        if ($a <= 100){
             return 0.794;
-        else if ($a > 100)
-            return 0.883;
-    } else if ($a > 150) {
-        if ($a < 211)
-            return 0.9451;
-        else if ($a > 210 && $a < 311)
-            return 1.0489;
-        else if ($a > 310 && $a < 511)
-            return 1.2915;
-        else    return 1.4975;
+        }
+        else if ($a > 150) {
+                if ($a < 211)
+                    return 0.9451;
+                else if ($a > 210 && $a < 311)
+                    return 1.0489;
+                else if ($a > 310 && $a < 511)
+                    return 1.2915;
+                else    return 1.4975;
     }
 }
 
