@@ -33,7 +33,10 @@ label{
 }
 table{
     /* padding: 20px 0px; */
-    margin-top: 20px 
+    margin-top: 20px ; 
+}
+caption{
+    text-align: center;
 }
 button{
     margin-bottom: 50px;
@@ -43,4 +46,12 @@ h2{
 }
 h4{
     color: #9aa6b3;
+}
+#imprimer_zone{
+    Margin-top: 20px;
+}
+@media print {
+    #imprimer_zone{
+        display: none;
+    }
 }

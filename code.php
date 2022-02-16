@@ -11,9 +11,11 @@
 </head>
 
 <body>
+    <div id="imprimer_zone">
     <h2>Welcome to SOLIDAO</h2>
-    <h4>Simuler votre consommation d'électricité mensuelle</h4>
+    
     <form action="code.php" method="post" name="données">
+        <h4>Simuler votre consommation d'électricité mensuelle</h4>
         <div class="input-group mb-3 ">
             <span class="input-group-text" id="basic-addon1">Entrer L'index du mois dérnier: </span>
             <input type="number" name="Index1" id="Index1" class="form-control">
@@ -79,8 +81,9 @@
         </div>
     </div>
 
-    <caption>Votre facture provisoire</caption>
-    <table class="table table-striped">
+</div>
+<table class="table table-striped">
+        <caption>Votre facture provisoire</caption>
         <thead>
             <tr>
                 <th scope="col"></th>
@@ -137,7 +140,7 @@
                 </td>
                 <th>
                     <?php if ($consommation > 100 && $consommation <= 150) {
-                        echo  "1 الشطر";
+                        echo  "1الشطر";
                     } else اشطر($consommation);
                     ?>
                 </th>
@@ -242,14 +245,14 @@
             <h4>ÉLECTRICITÉ</h4>
         </div>
         <div>
-            <h4> <?php echo  $total = Addition($Stotal1, $Stotal2) . '  DH' ?> </h4>
+            <h2> <?php echo  $total = Addition($Stotal1, $Stotal2) . '  DH' ?> </h2>
         </div>
         <div>
             <h4>مجموع الكھرباء </h4>
         </div>
     </div>
-    <br>
-    <button type="button" class="btn btn-primary" onclick="window.print();">Imprimer</button>
+
+    <button type="button" class="btn btn-primary" onclick="window.print();" id="imprimer_zone">Imprimer</button>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 
