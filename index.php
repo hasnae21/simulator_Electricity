@@ -18,7 +18,7 @@ error_reporting(0);
         <h2>Welcome to SOLIDAO</h2>
         <h4>Simuler votre consommation d'électricité mensuelle</h4>
 
-        <form action="code.php" method="post">
+        <form action="index.php" method="post">
 
             <div class=" input-group mb-3 ">
                 <span class="input-group-text" id="basic-addon1">Entrer L'index du mois dérnier: </span>
